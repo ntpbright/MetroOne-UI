@@ -7,13 +7,15 @@ import {
   Text,
   TouchableOpacity,
   View,
-} from 'react-native';
-import { WebBrowser } from 'expo';
+  StatusBar,
+} from 'react-native'
+import { WebBrowser } from 'expo'
 
-import { Header, Button } from 'react-native-elements';
-import Colors from '../constants/Colors';
-
-import { MonoText } from '../components/StyledText';
+// front-end
+import { Header, Button } from 'react-native-elements'
+import Colors from '../constants/Colors'
+import { MonoText } from '../components/StyledText'
+import { FontAwesome } from '@expo/vector-icons';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -23,15 +25,17 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar backgroundColor={ Colors.NavBarColor } />
         <Header
           centerComponent={{ text: 'MetroOne', style: { fontWeight: 'bold', color: '#fff', fontSize: 20 } }}
           containerStyle={{
             backgroundColor: Colors.NavBarColor,
             justifyContent: 'space-around',
-            height: 100
+            height: 100,
+            paddingTop: 30
           }}
         />
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <View style={styles.timeContainer}>
           <Text style={styles.clockInTypeText}>
             Manual clock in
           </Text>
@@ -39,47 +43,32 @@ export default class HomeScreen extends React.Component {
             14:12
           </Text>
           <Button
-            icon={<CustomIcon />}
-            title='BUTTON WITH CUSTOM ICON'
+            style={styles.clockBtn}
+            icon = {{ name: 'sign-in', type: 'font-awesome', color: 'green', size: 80 }}
+            buttonStyle={{
+              backgroundColor: "#fff",
+              width: 150,
+              height: 150,
+              borderColor: "transparent",
+              borderWidth: 0,
+              borderRadius: 100
+            }}
           />
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
-          </View>
-
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
+        </View>
+        <View style={{ flex: 1}}>
+          <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} >
+            <View style={styles.LogTimeContainer}>
+              <View style={styles.logContainer}>
+                <Text style={styles.dateText}>Tue 16 Oct 18</Text>
+                <Text style={styles.logTimeText}>09:25 ????</Text>
+                <View style={styles.line}/>
+              </View>
+              <View style={styles.logContainer}>
+                <Text style={styles.dateText}>Tue 15 Oct 18</Text>
+                <Text style={styles.logTimeText}>09:25 19:30</Text>
+              </View>
             </View>
-
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
+          </ScrollView>
         </View>
       </View>
     );
@@ -120,15 +109,42 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  line: {
+    borderWidth: 0.5,
+    borderColor: '#000',
+    height: 50,
+    width: 1
+  },
+  clockBtn: {
+    paddingVertical: 20
+  },
+  timeContainer: {
+    paddingVertical: 40,
+    backgroundColor: '#E5E5E5',
+    alignItems: 'center',
+  },
   clockInTypeText: {
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center'
   },
   timeText: {
-    fontSize: 80,
+    fontSize: 60,
     fontWeight: 'bold',
     textAlign: 'center'
+  },
+  dateText: {
+    fontSize: 25,
+    fontWeight: 'bold'
+  },
+  logTimeText: {
+    fontSize: 20,
+    paddingVertical: 15,
+    textAlign: 'center'
+  },
+  logContainer: {
+    paddingVertical: 15,
+    alignItems: 'center'
   },
   container: {
     flex: 1,
@@ -142,7 +158,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
+    backgroundColor: '#fff',
+    flexGrow: 1
   },
   welcomeContainer: {
     alignItems: 'center',
@@ -177,25 +194,9 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     textAlign: 'center',
   },
-  tabBarInfoContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
+  LogTimeContainer: {
     alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
+    paddingVertical: 15,
   },
   tabBarInfoText: {
     fontSize: 17,
