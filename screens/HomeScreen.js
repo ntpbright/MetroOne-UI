@@ -49,10 +49,10 @@ export default class HomeScreen extends React.Component {
               borderRadius: 100
             }}
           /> */}
-          <Button onPress={() => console.log('Pressed')} icon={({}) => (
+          <Button style={{ textAlign: 'center' }} onPress={() => console.log('Pressed')} icon={({}) => (
             <Image
               source={require('../assets/icons/btn_main_clock_in.png')}
-              style={{ width: 150, height: 150, textAlign: 'center' }}
+              style={{ width: 150, height: 150 }}
             />
           )}>
           </Button>
@@ -128,7 +128,6 @@ const styles = StyleSheet.create({
   clockInTypeText: {
     fontSize: 20,
     fontWeight: 'bold',
-    textAlign: 'center'
   },
   timeText: {
     fontSize: 60,
