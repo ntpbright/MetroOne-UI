@@ -12,7 +12,7 @@ import {
 import { WebBrowser } from 'expo'
 
 // front-end
-import { Header, Button } from 'react-native-elements'
+import { Appbar, Button } from 'react-native-paper';
 import Colors from '../constants/Colors'
 import { MonoText } from '../components/StyledText'
 import { FontAwesome } from '@expo/vector-icons';
@@ -25,16 +25,11 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar backgroundColor={ Colors.NavBarColor } />
-        <Header
-          centerComponent={{ text: 'MetroOne', style: { fontWeight: 'bold', color: '#fff', fontSize: 20 } }}
-          containerStyle={{
-            backgroundColor: Colors.NavBarColor,
-            justifyContent: 'space-around',
-            height: 100,
-            paddingTop: 30
-          }}
-        />
+        <Appbar.Header>
+          <Appbar.Content center
+            title="MetroOne"
+          />
+        </Appbar.Header>
         <View style={styles.timeContainer}>
           <Text style={styles.clockInTypeText}>
             Manual clock in
@@ -42,7 +37,7 @@ export default class HomeScreen extends React.Component {
           <Text style={styles.timeText}>
             14:12
           </Text>
-          <Button
+          {/* <Button
             style={styles.clockBtn}
             icon = {{ name: 'sign-in', type: 'font-awesome', color: 'green', size: 80 }}
             buttonStyle={{
@@ -53,7 +48,14 @@ export default class HomeScreen extends React.Component {
               borderWidth: 0,
               borderRadius: 100
             }}
-          />
+          /> */}
+          <Button onPress={() => console.log('Pressed')} icon={({}) => (
+            <Image
+              source={require('../assets/icons/btn_main_clock_in.png')}
+              style={{ width: 150, height: 150, textAlign: 'center' }}
+            />
+          )}>
+          </Button>
         </View>
         <View style={{ flex: 1}}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} >
