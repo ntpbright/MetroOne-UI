@@ -1,61 +1,96 @@
 import React from 'react';
 import {
   Image,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
-  StatusBar,
+  TouchableOpacity,
+  Icon,
 } from 'react-native'
 import { WebBrowser } from 'expo'
 
+import post_attendance from '../Functions/api/post_m_attendance'
+import get_status from '../Functions/api/get_user_staus'
+
 // front-end
+import moment from 'moment'
 import { Appbar, Button } from 'react-native-paper';
 import Colors from '../constants/Colors'
-import { MonoText } from '../components/StyledText'
-import { FontAwesome } from '@expo/vector-icons';
+
+const timer = require('react-native-timer');
 
 export default class HomeScreen extends React.Component {
+
+  constructor(){
+    super()
+  }
+
   static navigationOptions = {
     header: null,
+    curTime: null,
+    status: null, //0 not clock-in, 1 clock-in
+    check: null,
   };
+
+  componentWillMount = () => {
+    this.setState({curTime : moment().format("h:mm:ss")})
+    // this.checkStatus()
+  }
+
+  componentDidMount(){
+    timer.setInterval('UpdateTime', () => {
+      this.setState( {curTime : moment().format("h:mm:ss")})
+    }, 1000);
+  }
+
+  // checkStatus(){
+  //   console.log("Check status")
+  //   get_status()
+  //   .then(result=> {
+  //     this.setState({check: result})
+  //   })
+  //   .catch(error => {
+
+  //   })
+  //   // console.log("Check status: "+this.state.status)
+  // }
+
+  callApiAttendance(){
+    post_attendance()
+    .then(result => {
+      this.setState({status : result.clock_event})
+    })
+    .catch(error => {
+
+    })
+    // console.log("Status: "+this.state.status)
+  }
 
   render() {
     return (
       <View style={styles.container}>
-        <Appbar.Header>
-          <Appbar.Content center
+        <Appbar.Header style={{backgroundColor:Colors.navBarColor}}>
+          <Appbar.Content
             title="MetroOne"
+            titleStyle={{textAlign:'center'}}
           />
         </Appbar.Header>
         <View style={styles.timeContainer}>
           <Text style={styles.clockInTypeText}>
-            Manual clock in
+            Manual Clock-in
           </Text>
           <Text style={styles.timeText}>
-            14:12
+            {this.state.curTime}
           </Text>
-          {/* <Button
+          <TouchableOpacity
+            onPress={() => this.callApiAttendance()}
             style={styles.clockBtn}
-            icon = {{ name: 'sign-in', type: 'font-awesome', color: 'green', size: 80 }}
-            buttonStyle={{
-              backgroundColor: "#fff",
-              width: 150,
-              height: 150,
-              borderColor: "transparent",
-              borderWidth: 0,
-              borderRadius: 100
-            }}
-          /> */}
-          <Button style={{ textAlign: 'center' }} onPress={() => console.log('Pressed')} icon={({}) => (
-            <Image
+          >
+            <Image style={styles.clockBtnImage}
               source={require('../assets/icons/btn_main_clock_in.png')}
-              style={{ width: 150, height: 150 }}
             />
-          )}>
-          </Button>
+          </TouchableOpacity>
         </View>
         <View style={{ flex: 1}}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} >
@@ -75,39 +110,6 @@ export default class HomeScreen extends React.Component {
       </View>
     );
   }
-
-  _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
-        </Text>
-      );
-
-      return (
-        <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use useful development
-          tools. {learnMoreButton}
-        </Text>
-      );
-    } else {
-      return (
-        <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
-        </Text>
-      );
-    }
-  }
-
-  _handleLearnMorePress = () => {
-    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
-  };
-
-  _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    );
-  };
 }
 
 const styles = StyleSheet.create({
@@ -118,10 +120,21 @@ const styles = StyleSheet.create({
     width: 1
   },
   clockBtn: {
-    paddingVertical: 20
+    borderWidth:1,
+    borderColor:'rgba(0,0,0,0.2)',
+    alignItems:'center',
+    justifyContent:'center',
+    width:175,
+    height:175,
+    backgroundColor:'#fff',
+    borderRadius:200,
+  },
+  clockBtnImage: {
+    width:175,
+    height:175,
   },
   timeContainer: {
-    paddingVertical: 40,
+    paddingVertical: 20,
     backgroundColor: '#E5E5E5',
     alignItems: 'center',
   },
@@ -132,7 +145,8 @@ const styles = StyleSheet.create({
   timeText: {
     fontSize: 60,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    marginBottom: 25
   },
   dateText: {
     fontSize: 25,

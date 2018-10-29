@@ -23,7 +23,6 @@ export default class App extends React.Component {
 
   state = {
     isLoadingComplete: false,
-    region: { latitude: null, longitude: null},
     coord: { latitude:13.789262, longitude:100.579949 },
     real_location: { latitude:13.789262, longitude:100.579949 },
     location: null,
@@ -31,20 +30,9 @@ export default class App extends React.Component {
     distance: null,
     radius: 20,
     status: null,
+    counter: 0,
+    workStatus: false,
   };
-
-  // testPushNotification = async () => {
-  //   let { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS)
-
-  //   if (status !== 'granted') {
-  //     return;
-  //   }
-
-  //   let token = await Notifications.getExpoPushTokenAsync()
-  //   console.log(token)
-  //   firebase.database().ref('/users').set({token: token})
-  // }
-
 
   getSurfaceDistance(location){
     return this.SURFACE_DISTANCE_PER_ONE_DEGREE[parseInt(location.latitude / this.BETWEEN_DEGREE)]; //depend on latitude
@@ -59,10 +47,7 @@ export default class App extends React.Component {
   }
 
   componentWillMount = async () => {
-    // this.setRegion()
-    console.log("Will Mount")
     await this._getLocationAsync()
-    await console.log(this.state.location)
   }
 
   componentDidMount() {
@@ -75,11 +60,7 @@ export default class App extends React.Component {
       console.log(this.state.real_location),
       console.log(this.state.distance),
       console.log(this.state.status)
-    }, 5000);
-  }
-
-  setRegion(){
-    // let region = this.state.
+    }, 60000);
   }
 
   _getLocationAsync = async () => {
@@ -104,7 +85,6 @@ export default class App extends React.Component {
       real_location.longitude = this.state.location.coords.longitude
     }
     this.setState({real_location})
-    console.log("Update location")
   }
 
   findDistance(){
@@ -118,14 +98,27 @@ export default class App extends React.Component {
     var power2 = Math.pow((this.state.coord.longitude * longitudeDistance2) - (this.state.real_location.longitude * longitudeDistance1), 2);
     let distance = Math.sqrt(power1 + power2);
     this.setState({ distance })
-    console.log("Find Distance")
   };
 
   checkStatus(){
-    if(this.state.distance <= this.state.radius){
+    counter = this.state.counter
+    if(this.state.distance <= this.state.radius && !this.setState.workStatus){
+      console.log("if")
       this.setState({status : true})
-    } else{
+      this.setState({counter: ++counter})
+      this.setState({workStatus: true})
+      console.log("update counter : " + this.state.counter)
+    } else if(this.state.distance > this.state.radius && this.setState.workStatus) {
+      console.log("else if")
       this.setState({status : false})
+      this.setState({counter: ++counter})
+      this.setState({workStatus: false})
+      console.log("update counter : " + this.state.counter)
+    } else{
+      console.log("else")
+      this.setState({status : false})
+      this.setState( {counter: 0})
+      console.log("update counter : " + this.state.counter)
     }
   }
 
@@ -142,7 +135,7 @@ export default class App extends React.Component {
       return (
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppNavigator />
+          <AppNavigator screenProps={{x:1}}/>
         </View>
       );
     }
