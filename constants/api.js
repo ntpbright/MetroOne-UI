@@ -1,4 +1,4 @@
-const url = 'http://908d8253.ngrok.io'
+const url = 'http://6ffbaba8.ngrok.io'
 
 export default {
   post_attendance: url+'/api/v1/attendance',

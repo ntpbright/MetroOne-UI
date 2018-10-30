@@ -4,7 +4,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import RequestScreen from '../screens/RequestScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -24,11 +24,11 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const RequestsStack = createStackNavigator({
+  Links: RequestScreen,
 });
 
-LinksStack.navigationOptions = {
+RequestsStack.navigationOptions = {
   tabBarLabel: 'Requests',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -40,5 +40,5 @@ LinksStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  RequestsStack,
 });

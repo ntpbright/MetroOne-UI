@@ -2,8 +2,27 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon, Location, Permissions, Notifications } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
+import BackgroundFetch from "react-native-background-fetch";
 
 const timer = require('react-native-timer');
+
+let MyHeadlessTask = async (event) => {
+  console.log('[BackgroundFetch HeadlessTask] start');
+
+  // Perform an example HTTP request.
+  // Important:  await asychronous tasks when using HeadlessJS.
+  let response = await fetch('https://facebook.github.io/react-native/movies.json');
+  let responseJson = await response.json();
+  console.log('[BackgroundFetch HeadlessTask response: ', responseJson);
+
+  // Required:  Signal to native code that your task is complete.
+  // If you don't do this, your app could be terminated and/or assigned
+  // battery-blame for consuming too much time in background.
+  BackgroundFetch.finish();
+}
+
+// Register your BackgroundFetch HeadlessTask
+BackgroundFetch.registerHeadlessTask(MyHeadlessTask);
 
 export default class App extends React.Component {
   constructor(){
@@ -61,6 +80,47 @@ export default class App extends React.Component {
       console.log(this.state.distance),
       console.log(this.state.status)
     }, 60000);
+
+    BackgroundFetch.configure({
+      minimumFetchInterval: 15, // <-- minutes (15 is minimum allowed)
+      stopOnTerminate: false,   // <-- Android-only,
+      startOnBoot: true         // <-- Android-only
+    }, () => {
+      console.log("[js] Received background-fetch event");
+      timer.setInterval('UpdateGPSInterval', () => {
+        console.log("Interval"),
+        this.updateLocation(),
+        this.findDistance(),
+        this.checkStatus(),
+        console.log(this.state.real_location),
+        console.log(this.state.distance),
+        console.log(this.state.status)
+      }, 1000);
+      console.log(this.state.real_location),
+      console.log(this.state.distance),
+      console.log(this.state.status)
+      // Required: Signal completion of your task to native code
+      // If you fail to do this, the OS can terminate your app
+      // or assign battery-blame for consuming too much background-time
+      BackgroundFetch.finish(BackgroundFetch.FETCH_RESULT_NEW_DATA);
+    }, (error) => {
+      console.log("[js] RNBackgroundFetch failed to start");
+    });
+
+    // Optional: Query the authorization status.
+    BackgroundFetch.status((status) => {
+      switch(status) {
+        case BackgroundFetch.STATUS_RESTRICTED:
+          console.log("BackgroundFetch restricted");
+          break;
+        case BackgroundFetch.STATUS_DENIED:
+          console.log("BackgroundFetch denied");
+          break;
+        case BackgroundFetch.STATUS_AVAILABLE:
+          console.log("BackgroundFetch is enabled");
+          break;
+      }
+    });
   }
 
   _getLocationAsync = async () => {
