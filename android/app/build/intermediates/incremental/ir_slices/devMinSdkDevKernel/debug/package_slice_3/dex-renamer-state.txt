@@ -1,0 +1,4 @@
+#Tue Oct 30 10:28:41 ICT 2018
+base.0=/Users/nuttapatpromchongamorkulprapa/Documents/work/metromerce/MetroStaff/expo/MetroOne-UI/android/app/build/intermediates/transforms/dexMerger/devMinSdkDevKernel/debug/3
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/nuttapatpromchongamorkulprapa/Documents/work/metromerce/MetroStaff/expo/MetroOne-UI/android/app/build/intermediates/incremental/mergeDevMinSdkDevKernelDebugResources/merged.dir/values-az-rAZ/values-az-rAZ.xml",
+            "map": [
+                {
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.6.1.aar/834170e1db99b7b25077b523f3fa903d/res/values-az-rAZ/values-az-rAZ.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,136,209,276,341,417,501,582,659,733,805",
+                        "endColumns": "80,72,66,64,75,83,80,76,73,71,68",
+                        "endOffsets": "131,204,271,336,412,496,577,654,728,800,869"
+                    }
+                }
+            ]
+        }
+    ]
+}

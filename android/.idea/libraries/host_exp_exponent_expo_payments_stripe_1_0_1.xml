@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="host.exp.exponent:expo-payments-stripe-1.0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-payments-stripe-1.0.1.aar/977e3ca614fd3a49091c947684b0bd5a/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-payments-stripe-1.0.1.aar/977e3ca614fd3a49091c947684b0bd5a/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../node_modules/expokit/maven/host/exp/exponent/expo-payments-stripe/1.0.1/expo-payments-stripe-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

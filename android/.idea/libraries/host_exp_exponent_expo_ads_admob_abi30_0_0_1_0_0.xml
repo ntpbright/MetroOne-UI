@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="host.exp.exponent:expo-ads-admob-abi30_0_0-1.0.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-ads-admob-abi30_0_0-1.0.0.aar/fa34b85abb683443d1d2b6ea9e7e3526/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-ads-admob-abi30_0_0-1.0.0.aar/fa34b85abb683443d1d2b6ea9e7e3526/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

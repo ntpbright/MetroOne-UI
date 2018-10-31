@@ -1,13 +1,16 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from 'react'
+import { Platform } from 'react-native'
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import TabBarIcon from '../components/TabBarIcon'
+import HomeScreen from '../screens/HomeScreen'
+import RequestScreen from '../screens/RequestScreen'
+import MakeRequestScreen from '../screens/MakeRequestScreen'
+import ManualScreen from '../screens/ManualScreen'
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
+  Manual: ManualScreen,
 });
 
 HomeStack.navigationOptions = {
@@ -24,11 +27,22 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
-});
+const RequestsStack = createStackNavigator(
+  {
+    Request: RequestScreen,
+    MakeRequest: {
+      screen: MakeRequestScreen,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    }
+  },
+  {
+    initialRouteName: 'Request',
+  }
+);
 
-LinksStack.navigationOptions = {
+RequestsStack.navigationOptions = {
   tabBarLabel: 'Requests',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -40,5 +54,5 @@ LinksStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  RequestsStack,
 });

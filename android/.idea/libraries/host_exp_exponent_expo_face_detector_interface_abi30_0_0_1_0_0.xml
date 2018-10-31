@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="host.exp.exponent:expo-face-detector-interface-abi30_0_0-1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-face-detector-interface-abi30_0_0-1.0.0.aar/b327372bdd6b5b45818f5f0560132c19/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-face-detector-interface-abi30_0_0-1.0.0.aar/b327372bdd6b5b45818f5f0560132c19/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

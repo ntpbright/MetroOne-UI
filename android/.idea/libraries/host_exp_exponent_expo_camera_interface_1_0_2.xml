@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="host.exp.exponent:expo-camera-interface-1.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-camera-interface-1.0.2.aar/2ad2ee8a802ba1061ec667fce4b88bbb/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-camera-interface-1.0.2.aar/2ad2ee8a802ba1061ec667fce4b88bbb/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../node_modules/expokit/maven/host/exp/exponent/expo-camera-interface/1.0.2/expo-camera-interface-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
