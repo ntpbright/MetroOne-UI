@@ -1,14 +1,16 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from 'react'
+import { Platform } from 'react-native'
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import RequestScreen from '../screens/RequestScreen';
-import MakeRequest from '../screens/MakeRequestScreen'
+import TabBarIcon from '../components/TabBarIcon'
+import HomeScreen from '../screens/HomeScreen'
+import RequestScreen from '../screens/RequestScreen'
+import MakeRequestScreen from '../screens/MakeRequestScreen'
+import ManualScreen from '../screens/ManualScreen'
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
+  Manual: ManualScreen,
 });
 
 HomeStack.navigationOptions = {
@@ -28,7 +30,12 @@ HomeStack.navigationOptions = {
 const RequestsStack = createStackNavigator(
   {
     Request: RequestScreen,
-    MakeRequest: MakeRequest,
+    MakeRequest: {
+      screen: MakeRequestScreen,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    }
   },
   {
     initialRouteName: 'Request',

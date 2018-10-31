@@ -19,6 +19,7 @@ import SegmentedControlTab from 'react-native-segmented-control-tab'
 export default class MakeRequestScreen extends React.Component {
   static navigationOptions = {
     header: null,
+    tabBarVisible: false
   };
 
   // componentDidMount() {

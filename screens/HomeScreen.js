@@ -83,7 +83,7 @@ export default class HomeScreen extends React.Component {
             {this.state.curTime}
           </Text>
           <TouchableOpacity
-            onPress={() => this.callApiAttendance()}
+            onPress= {() => this.props.navigation.navigate('Manual')}
             style={styles.clockBtn}
           >
             <Image style={styles.clockBtnImage}
