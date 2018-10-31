@@ -1,7 +1,7 @@
 const tintColor = '#2f95dc';
 
 export default {
-  navBarColor: '#008BCC',
+  MainColor: '#008BCC',
   tintColor,
   tabIconDefault: '#ccc',
   tabIconSelected: tintColor,

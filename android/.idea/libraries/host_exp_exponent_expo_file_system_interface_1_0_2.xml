@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="host.exp.exponent:expo-file-system-interface-1.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-file-system-interface-1.0.2.aar/9b8c02ebef697ce426cc934b93e03531/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/expo-file-system-interface-1.0.2.aar/9b8c02ebef697ce426cc934b93e03531/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../node_modules/expokit/maven/host/exp/exponent/expo-file-system-interface/1.0.2/expo-file-system-interface-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
