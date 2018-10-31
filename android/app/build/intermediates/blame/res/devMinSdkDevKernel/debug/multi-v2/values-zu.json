@@ -4,126 +4,7 @@
             "outputFile": "/Users/nuttapatpromchongamorkulprapa/Documents/work/metromerce/MetroStaff/expo/MetroOne-UI/android/app/build/intermediates/incremental/mergeDevMinSdkDevKernelDebugResources/merged.dir/values-zu/values-zu.xml",
             "map": [
                 {
-                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/firebase-messaging-17.1.0.aar/842bf4754f940a234e652e57b027f9d2/res/values-zu/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "205",
-                        "endColumns": "110",
-                        "endOffsets": "315"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "5510",
-                        "endColumns": "114",
-                        "endOffsets": "5620"
-                    }
-                },
-                {
-                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/1a612694cd40f426ba0b6fea88ac2e8a/res/values-zu/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
-                    },
-                    "to": {
-                        "startLines": "27",
-                        "startColumns": "4",
-                        "startOffsets": "3093",
-                        "endColumns": "190",
-                        "endOffsets": "3279"
-                    }
-                },
-                {
-                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/71a68f5fc93a43535b873209f8dfbb92/res/values-zu/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,354,562,695,797,1024,1151,1301,1436,1655,1763,1959,2088,2305,2488,2575,2670",
-                        "endColumns": "108,207,132,101,226,126,149,134,218,107,195,128,216,182,86,94,109",
-                        "endOffsets": "353,561,694,796,1023,1150,1300,1435,1654,1762,1958,2087,2304,2487,2574,2669,2779"
-                    },
-                    "to": {
-                        "startLines": "19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,36",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1878,1991,2199,2336,2442,2669,2800,2954,3284,3503,3615,3811,3944,4161,4348,4439,4538",
-                        "endColumns": "112,207,136,105,226,130,153,138,218,111,195,132,216,186,90,98,113",
-                        "endOffsets": "1986,2194,2331,2437,2664,2795,2949,3088,3498,3610,3806,3939,4156,4343,4434,4533,4647"
-                    }
-                },
-                {
-                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-wallet-15.0.1.aar/b2952b8c89b4e41ca405a4f1189bc440/res/values-zu/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "200",
-                        "endColumns": "101",
-                        "endOffsets": "301"
-                    },
-                    "to": {
-                        "startLines": "59",
-                        "startColumns": "4",
-                        "startOffsets": "6531",
-                        "endColumns": "105",
-                        "endOffsets": "6632"
-                    }
-                },
-                {
-                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.6.1.aar/bb7457512f349b9c2b9a5a95fde4749d/res/values-zu/values-zu.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,145,225,303,369,458,537,620,701,779,848",
-                        "endColumns": "89,79,77,65,88,78,82,80,77,68,64",
-                        "endOffsets": "140,220,298,364,453,532,615,696,774,843,908"
-                    },
-                    "to": {
-                        "startLines": "37,38,39,40,41,42,43,44,45,46,47",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4652,4742,4822,4900,4966,5055,5134,5217,5298,5376,5445",
-                        "endColumns": "89,79,77,65,88,78,82,80,77,68,64",
-                        "endOffsets": "4737,4817,4895,4961,5050,5129,5212,5293,5371,5440,5505"
-                    }
-                },
-                {
-                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-ads-15.0.1.aar/7268ebff05a1ab9fc94efe1d710b4abf/res/values-zu/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "197,273,390,456,521,602,706",
-                        "endColumns": "75,116,65,64,80,103,74",
-                        "endOffsets": "272,389,455,520,601,705,780"
-                    },
-                    "to": {
-                        "startLines": "50,51,52,53,54,55,56",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "5737,5817,5938,6008,6077,6162,6270",
-                        "endColumns": "79,120,69,68,84,107,78",
-                        "endOffsets": "5812,5933,6003,6072,6157,6265,6344"
-                    }
-                },
-                {
-                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b79831fe6ae8bd4e834f1ebdabf89f81/res/values-zu/values-zu.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "58",
-                        "startColumns": "4",
-                        "startOffsets": "6430",
-                        "endColumns": "100",
-                        "endOffsets": "6526"
-                    }
-                },
-                {
-                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/3832262205695318ec277a2a90a06571/res/values-zu/values-zu.xml",
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/09aa6d0e67ccbe4832c17d155a6cbb1a/res/values-zu/values-zu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -140,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-gcm-15.0.1.aar/301b0abddd249a0f7ebac1ef12921f74/res/values-zu/values.xml",
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-gcm-15.0.1.aar/30cbe63385494c7f70cbaa85ceca2451/res/values-zu/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -154,6 +35,125 @@
                         "startOffsets": "5625",
                         "endColumns": "111",
                         "endOffsets": "5732"
+                    }
+                },
+                {
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-wallet-15.0.1.aar/2370253f511eef1084fe8d9b044f26e8/res/values-zu/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "200",
+                        "endColumns": "101",
+                        "endOffsets": "301"
+                    },
+                    "to": {
+                        "startLines": "59",
+                        "startColumns": "4",
+                        "startOffsets": "6531",
+                        "endColumns": "105",
+                        "endOffsets": "6632"
+                    }
+                },
+                {
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/00fd5a730bffea9fbdad9c3f67f650d7/res/values-zu/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
+                    },
+                    "to": {
+                        "startLines": "27",
+                        "startColumns": "4",
+                        "startOffsets": "3093",
+                        "endColumns": "190",
+                        "endOffsets": "3279"
+                    }
+                },
+                {
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/9200dea2b4ebd0614ac0a21ae3961d65/res/values-zu/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,354,562,695,797,1024,1151,1301,1436,1655,1763,1959,2088,2305,2488,2575,2670",
+                        "endColumns": "108,207,132,101,226,126,149,134,218,107,195,128,216,182,86,94,109",
+                        "endOffsets": "353,561,694,796,1023,1150,1300,1435,1654,1762,1958,2087,2304,2487,2574,2669,2779"
+                    },
+                    "to": {
+                        "startLines": "19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,36",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1878,1991,2199,2336,2442,2669,2800,2954,3284,3503,3615,3811,3944,4161,4348,4439,4538",
+                        "endColumns": "112,207,136,105,226,130,153,138,218,111,195,132,216,186,90,98,113",
+                        "endOffsets": "1986,2194,2331,2437,2664,2795,2949,3088,3498,3610,3806,3939,4156,4343,4434,4533,4647"
+                    }
+                },
+                {
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.6.1.aar/834170e1db99b7b25077b523f3fa903d/res/values-zu/values-zu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,145,225,303,369,458,537,620,701,779,848",
+                        "endColumns": "89,79,77,65,88,78,82,80,77,68,64",
+                        "endOffsets": "140,220,298,364,453,532,615,696,774,843,908"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40,41,42,43,44,45,46,47",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4652,4742,4822,4900,4966,5055,5134,5217,5298,5376,5445",
+                        "endColumns": "89,79,77,65,88,78,82,80,77,68,64",
+                        "endOffsets": "4737,4817,4895,4961,5050,5129,5212,5293,5371,5440,5505"
+                    }
+                },
+                {
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/4939bfc2b4e57f6fd13f0ef877f3ed96/res/values-zu/values-zu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "58",
+                        "startColumns": "4",
+                        "startOffsets": "6430",
+                        "endColumns": "100",
+                        "endOffsets": "6526"
+                    }
+                },
+                {
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/firebase-messaging-17.1.0.aar/0e9f4a8f33ff3271efce942490226c76/res/values-zu/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "205",
+                        "endColumns": "110",
+                        "endOffsets": "315"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "5510",
+                        "endColumns": "114",
+                        "endOffsets": "5620"
+                    }
+                },
+                {
+                    "source": "/Users/nuttapatpromchongamorkulprapa/.gradle/caches/transforms-1/files-1.1/play-services-ads-15.0.1.aar/992f744953baf20693a60ecc8c621f19/res/values-zu/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "197,273,390,456,521,602,706",
+                        "endColumns": "75,116,65,64,80,103,74",
+                        "endOffsets": "272,389,455,520,601,705,780"
+                    },
+                    "to": {
+                        "startLines": "50,51,52,53,54,55,56",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "5737,5817,5938,6008,6077,6162,6270",
+                        "endColumns": "79,120,69,68,84,107,78",
+                        "endOffsets": "5812,5933,6003,6072,6157,6265,6344"
                     }
                 }
             ]

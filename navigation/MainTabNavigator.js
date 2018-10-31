@@ -5,6 +5,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import RequestScreen from '../screens/RequestScreen';
+import MakeRequest from '../screens/MakeRequestScreen'
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -24,9 +25,15 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const RequestsStack = createStackNavigator({
-  Links: RequestScreen,
-});
+const RequestsStack = createStackNavigator(
+  {
+    Request: RequestScreen,
+    MakeRequest: MakeRequest,
+  },
+  {
+    initialRouteName: 'Request',
+  }
+);
 
 RequestsStack.navigationOptions = {
   tabBarLabel: 'Requests',

@@ -8,14 +8,14 @@ import {
   TouchableOpacity,
   Icon,
 } from 'react-native'
-import { WebBrowser } from 'expo'
+import { createStackNavigator } from 'react-navigation';
 
 import post_attendance from '../Functions/api/post_m_attendance'
 import get_status from '../Functions/api/get_user_staus'
 
 // front-end
 import moment from 'moment'
-import { Appbar, Button } from 'react-native-paper';
+import { Appbar } from 'react-native-paper';
 import Colors from '../constants/Colors'
 
 const timer = require('react-native-timer');
@@ -35,7 +35,6 @@ export default class HomeScreen extends React.Component {
 
   componentWillMount = () => {
     this.setState({curTime : moment().format("h:mm:ss")})
-    // this.checkStatus()
   }
 
   componentDidMount(){
@@ -70,7 +69,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Appbar.Header style={{backgroundColor:Colors.navBarColor}}>
+        <Appbar.Header>
           <Appbar.Content
             title="MetroOne"
             titleStyle={{textAlign:'center'}}

@@ -2,7 +2,10 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon, Location, Permissions, Notifications } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import BackgroundFetch from "react-native-background-fetch";
+
+import Colors from './constants/Colors'
 
 const timer = require('react-native-timer');
 
@@ -23,6 +26,16 @@ let MyHeadlessTask = async (event) => {
 
 // Register your BackgroundFetch HeadlessTask
 BackgroundFetch.registerHeadlessTask(MyHeadlessTask);
+
+const theme = {
+  ...DefaultTheme,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: Colors.MainColor,
+    accent: '#f1c40f',
+  }
+};
 
 export default class App extends React.Component {
   constructor(){
@@ -193,10 +206,12 @@ export default class App extends React.Component {
       );
     } else {
       return (
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppNavigator screenProps={{x:1}}/>
-        </View>
+        <PaperProvider theme={theme}>
+          <View style={styles.container}>
+            {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+            <AppNavigator screenProps={{x:1}}/>
+          </View>
+        </PaperProvider>
       );
     }
   }
