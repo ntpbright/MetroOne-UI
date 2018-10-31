@@ -11,6 +11,7 @@ import ManualScreen from '../screens/ManualScreen'
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
   Manual: ManualScreen,
+  Remote: RemoteScreen,
 });
 
 HomeStack.navigationOptions = {

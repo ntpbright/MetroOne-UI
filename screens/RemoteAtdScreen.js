@@ -8,7 +8,9 @@ import {
   Alert
 } from 'react-native'
 
-import { Appbar } from 'react-native-paper';
+import Colors from '../constants/Colors'
+import { Appbar, TextInput, Button } from 'react-native-paper';
+import SegmentedControlTab from 'react-native-segmented-control-tab'
 
 const CannotDetectWifiAlert = () => {
   Alert.alert(
@@ -28,6 +30,10 @@ export default class ManualScreen extends React.Component {
     tabBarVisible: false,
   };
 
+  // componentDidMount() {
+  //   console.log('linksscreen', this.props)
+  // }
+
   constructor(){
     super()
     this.state = {
@@ -36,6 +42,17 @@ export default class ManualScreen extends React.Component {
       text: '',
       modalVisible: false,
     };
+  }
+
+  handleIndexChange = (index) => {
+    this.setState({
+      ...this.state,
+      selectedIndex: index,
+    });
+  }
+
+  handleCustomIndexSelect = (index: number) => {
+    this.setState(prevState => ({ ...prevState, customStyleIndex: index }))
   }
 
   render() {
