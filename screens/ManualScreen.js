@@ -10,18 +10,6 @@ import {
 
 import { Appbar } from 'react-native-paper';
 
-const CannotDetectWifiAlert = () => {
-  Alert.alert(
-    'Cannot detech Wifi',
-    'Please check your Wifi connection or you can request for manual clock in approval',
-    [
-      {text: 'Try agian', onPress: () => console.log('Cancel Pressed'),},
-      {text: 'Create requests', onPress: () => console.log('OK Pressed')},
-    ],
-    { cancelable: false }
-  )
-}
-
 export default class ManualScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -31,14 +19,22 @@ export default class ManualScreen extends React.Component {
   constructor(){
     super()
     this.state = {
-      selectedIndex: 0,
-      customStyleIndex: 0,
-      text: '',
       modalVisible: false,
     };
   }
 
   render() {
+    const CannotDetectWifiAlert = () => {
+      Alert.alert(
+        'Cannot detech Wifi',
+        'Please check your Wifi connection or you can request for manual clock in approval',
+        [
+          {text: 'Try agian', onPress: () => console.log('Cancel Pressed'),},
+          {text: 'Create requests', onPress: () => this.props.navigation.navigate('MakeRequest')},
+        ],
+        { cancelable: false }
+      )
+    }
     return (
       <View style={styles.container}>
         <Appbar.Header>
@@ -64,7 +60,7 @@ export default class ManualScreen extends React.Component {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress= {() => this.props.navigation.navigate('Home')}
+            onPress= {() => this.props.navigation.navigate('Clockout')}
             style={styles.btn}
           >
             <Image style={styles.btnSize}

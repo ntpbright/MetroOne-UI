@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font, Icon, Location, Permissions, Notifications } from 'expo';
+import { AppLoading, Asset, Font, Icon, Location, Permissions } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import BackgroundFetch from "react-native-background-fetch";

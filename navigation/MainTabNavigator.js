@@ -7,11 +7,14 @@ import HomeScreen from '../screens/HomeScreen'
 import RequestScreen from '../screens/RequestScreen'
 import MakeRequestScreen from '../screens/MakeRequestScreen'
 import ManualScreen from '../screens/ManualScreen'
+import RemoteScreen from '../screens/RemoteAtdScreen'
+import ClockoutScreen from '../screens/ConfirmClockout'
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
   Manual: ManualScreen,
   Remote: RemoteScreen,
+  Clockout: ClockoutScreen,
 });
 
 HomeStack.navigationOptions = {

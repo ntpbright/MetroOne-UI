@@ -50,7 +50,7 @@ export default class MakeRequestScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Appbar.Header>
-          <Appbar.BackAction onPress= {() => this.props.navigation.navigate('Request')}/>
+          <Appbar.BackAction onPress= {() => this.props.navigation.goBack()}/>
           <Appbar.Content
             title="Create Request"
             titleStyle={{alignItems:'center'}}
@@ -122,8 +122,8 @@ export default class MakeRequestScreen extends React.Component {
           </ScrollView>
         </View>
         <Button mode="contained" onPress={() => console.log('Pressed')} style={styles.btn}>
-            Send request
-          </Button>
+          Send request
+        </Button>
       </View>
     );
   }
