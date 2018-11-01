@@ -264,9 +264,10 @@ const listOfRequest = StyleSheet.create({
     height: 90
   },
   timeText:{
-    fontSize: 48,
+    fontSize: 40,
     fontWeight: 'bold',
     marginRight: 5,
+    textAlign: 'center'
   },
   contentContainer: {
     backgroundColor: '#fff',

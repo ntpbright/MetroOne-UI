@@ -228,7 +228,7 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
-  - RNVectorIcons (6.0.2):
+  - RNBackgroundFetch (2.4.4):
     - React
   - Stripe (13.0.3)
   - yoga (0.55.4.React)
@@ -280,7 +280,7 @@ DEPENDENCIES:
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
-  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - RNBackgroundFetch (from `../node_modules/react-native-background-fetch`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -381,8 +381,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
-  RNVectorIcons:
-    :path: "../node_modules/react-native-vector-icons"
+  RNBackgroundFetch:
+    :path: "../node_modules/react-native-background-fetch"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -450,10 +450,10 @@ SPEC CHECKSUMS:
   JKBigInteger2: e91672035c42328c48b7dd015b66812ddf40ca9b
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   React: aa2040dbb6f317b95314968021bd2888816e03d5
-  RNVectorIcons: 8c52e1e8da1153613fdef44748e865c25556cb9c
+  RNBackgroundFetch: 8c4f77f83c398c659bce82af2f0a885079417b9e
   Stripe: 76c203e21555089b708e6cbe972a3e3baf1ab4d8
   yoga: a23273df0088bf7f2bb7e5d7b00044ea57a2a54a
 
-PODFILE CHECKSUM: 3a36db5b27edbd6d9d3fed4c1e82154ab8c532a7
+PODFILE CHECKSUM: df1f423174a294a90fd813e3f442b461a0b341b8
 
 COCOAPODS: 1.5.3

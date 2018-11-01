@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A2165B658A04FE86BF4ED31815D71883"
-               BlueprintName = "Pods-metroone-ui"
+               BlueprintIdentifier = "5C7259373D487C8302CD6A9ADDFD3564"
+               BlueprintName = "RNBackgroundFetch"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-metroone-ui.a">
+               BuildableName = "libRNBackgroundFetch.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

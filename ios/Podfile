@@ -86,6 +86,7 @@ target 'metroone-ui' do
       "DevSupport",
       "CxxBridge"
     ]
+  pod 'RNBackgroundFetch', :path => '../node_modules/react-native-background-fetch'
   pod 'yoga',
     :path => "../node_modules/react-native/ReactCommon/yoga",
     :inhibit_warnings => true
@@ -99,12 +100,6 @@ target 'metroone-ui' do
     :podspec => "../node_modules/react-native/third-party-podspecs/glog.podspec",
     :inhibit_warnings => true
 
-
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-
-  pod 'react-native-background-timer', :path => '../node_modules/react-native-background-timer'
-
-  pod 'RNBackgroundFetch', :path => '../node_modules/react-native-background-fetch'
 
   post_install do |installer|
     installer.pods_project.main_group.tab_width = '2';

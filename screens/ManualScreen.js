@@ -51,22 +51,24 @@ export default class ManualScreen extends React.Component {
           <Text style={styles.textDes}>
             Please connect Metromerce Wifi instead
           </Text>
-          <TouchableOpacity
-            onPress= {CannotDetectWifiAlert}
-            style={styles.btn}
-          >
-            <Image style={styles.btnSize}
-              source={require('../assets/icons/btn_clock_in_wifi.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress= {() => this.props.navigation.navigate('Clockout')}
-            style={styles.btn}
-          >
-            <Image style={styles.btnSize}
-              source={require('../assets/icons/btn_clock_in_remote.png')}
-            />
-          </TouchableOpacity>
+          <View style={styles.btnContainer}>
+            <TouchableOpacity
+              onPress= {CannotDetectWifiAlert}
+              style={styles.btn}
+            >
+              <Image style={styles.btnSize}
+                source={require('../assets/icons/btn_clock_in_wifi.png')}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress= {() => this.props.navigation.navigate('Clockout')}
+              style={styles.btn}
+            >
+              <Image style={styles.btnSize}
+                source={require('../assets/icons/btn_clock_in_remote.png')}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -93,6 +95,10 @@ const styles = StyleSheet.create({
   btn: {
     alignItems: 'center',
     marginTop: 15,
+  },
+  btnContainer: {
+    flex: 1,
+    justifyContent: 'space-around'
   },
   btnSize: {
     width: 200,
