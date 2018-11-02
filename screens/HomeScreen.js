@@ -6,17 +6,15 @@ import {
   Text,
   View,
   TouchableOpacity,
-  Icon,
 } from 'react-native'
-import { createStackNavigator } from 'react-navigation';
+
+import { Location } from 'expo'
 
 import post_attendance from '../Functions/api/post_m_attendance'
-import get_status from '../Functions/api/get_user_staus'
 
 // front-end
 import moment from 'moment'
 import { Appbar } from 'react-native-paper';
-import Colors from '../constants/Colors'
 
 const timer = require('react-native-timer');
 
@@ -24,46 +22,132 @@ export default class HomeScreen extends React.Component {
 
   constructor(){
     super()
+    this.BETWEEN_DEGREE = 15.00;
+    this.THOUSAND_METER = 1000;
+    this.SURFACE_DISTANCE_PER_ONE_DEGREE = [
+      { latitude : 110.574, longitude : 111.320 }, //0  degree
+      { latitude : 110.649, longitude : 107.551 }, //15 degree
+      { latitude : 110.852, longitude : 96.486 },  //30 degree
+      { latitude : 111.132, longitude : 78.847 },  //45 degree
+      { latitude : 111.412, longitude : 55.800 },  //60 degree
+      { latitude : 111.618, longitude : 28.902 },  //75 degree
+      { latitude : 111.694, longitude : 0.000 }    //90 degree
+   ];
+  }
+
+  state = {
+    // 0 GPS
+    // 1 Manual
+    clockMethod: null,
+    // 0 not clock in
+    // 1 clock in
+    // 2 clock out
+    clockStatus: null,
+    screenDetail: {
+      "description": [
+        "GPS clock in",
+        "Manual clock in",
+      ],
+      "assetBtn": [
+        "../assets/icons/btn_main_clock_in.png",
+        "../assets/icons/btn_main_clock_out.png"
+      ]
+    },
+    isLoadingComplete: false,
+    coord: { latitude:13.789262, longitude:100.579949 },
+    real_location: { latitude:13.789262, longitude:100.579949 },
+    location: null,
+    errorMessage: null,
+    distance: null,
+    radius: 20,
+    counter: 0,
+    workStatus: false,
   }
 
   static navigationOptions = {
     header: null,
     curTime: null,
-    status: null, //0 not clock-in, 1 clock-in
     check: null,
   };
 
+  getSurfaceDistance(location){
+    return this.SURFACE_DISTANCE_PER_ONE_DEGREE[parseInt(location.latitude / this.BETWEEN_DEGREE)]; //depend on latitude
+  }
+
+  getLatitudeDistance(location){
+    return this.getSurfaceDistance(location).latitude * this.THOUSAND_METER;
+  }
+
+  getLongitudeDistance(location){
+    return this.getSurfaceDistance(location).longitude * this.THOUSAND_METER;
+  }
+
+  updateLocation = async() => {
+    let location = await Location.getCurrentPositionAsync({});
+    let real_location = {}
+    this.setState({ location });
+    if (this.state.errorMessage) {
+      text = this.state.errorMessage;
+    } else if (this.state.location) {
+      real_location.latitude = this.state.location.coords.latitude
+      real_location.longitude = this.state.location.coords.longitude
+    }
+    this.setState({real_location})
+  }
+
+  findDistance(){
+    var latitudeDistance1 = this.getLatitudeDistance(this.state.real_location); //a1
+    var latitudeDistance2 = this.getLatitudeDistance(this.state.coord); //a2
+    var longitudeDistance1 = this.getLongitudeDistance(this.state.real_location); //b1
+    var longitudeDistance2 = this.getLongitudeDistance(this.state.coord); //b2
+    // (X2 * a2 - X1 * a1) ^ 2
+    var power1 = Math.pow((this.state.coord.latitude * latitudeDistance2) - (this.state.real_location.latitude * latitudeDistance1), 2);
+    // (Y2 * b2 - Y1 * b1) ^ 2
+    var power2 = Math.pow((this.state.coord.longitude * longitudeDistance2) - (this.state.real_location.longitude * longitudeDistance1), 2);
+    let distance = Math.sqrt(power1 + power2);
+    this.setState({ distance })
+  };
+
+  checkStatus(){
+    this.updateLocation()
+    this.findDistance()
+    if(this.state.distance<=20){
+      this.setState({
+        clockMethod:0,
+        clockStatus:1,
+      })
+      this.callApiAttendance()
+      console.log("clock status : "+this.state.clockStatus)
+      console.log("btn path : "+this.state.screenDetail.assetBtn[this.state.clockMethod])
+    }
+    else if(this.state.distance>20){
+      this.setState({ clockMethod:1 })
+    }
+  }
+
+  callApiAttendance(){
+    console.log("callApiAttendance")
+    post_attendance()
+    .then(result => {
+      this.setState({clockStatus : result.clock_event})
+    })
+    .catch(error => {
+
+    })
+  }
+
   componentWillMount = () => {
-    this.setState({curTime : moment().format("h:mm:ss")})
+    this.checkStatus()
+    this.setState({
+      curTime: moment().format("h:mm:ss"),
+    })
   }
 
   componentDidMount(){
     timer.setInterval('UpdateTime', () => {
       this.setState( {curTime : moment().format("h:mm:ss")})
     }, 1000);
-  }
-
-  // checkStatus(){
-  //   console.log("Check status")
-  //   get_status()
-  //   .then(result=> {
-  //     this.setState({check: result})
-  //   })
-  //   .catch(error => {
-
-  //   })
-  //   // console.log("Check status: "+this.state.status)
-  // }
-
-  callApiAttendance(){
-    post_attendance()
-    .then(result => {
-      this.setState({status : result.clock_event})
-    })
-    .catch(error => {
-
-    })
-    // console.log("Status: "+this.state.status)
+    console.log("DidMount")
   }
 
   render() {
@@ -77,7 +161,7 @@ export default class HomeScreen extends React.Component {
         </Appbar.Header>
         <View style={styles.timeContainer}>
           <Text style={styles.clockInTypeText}>
-            Manual Clock-in
+            {this.state.screenDetail.description[this.state.clockMethod]}
           </Text>
           <Text style={styles.timeText}>
             {this.state.curTime}
@@ -87,7 +171,7 @@ export default class HomeScreen extends React.Component {
             style={styles.clockBtn}
           >
             <Image style={styles.clockBtnImage}
-              source={require('../assets/icons/btn_main_clock_in.png')}
+              source= {this.state.screenDetail.assetBtn[this.state.clockStatus]}
             />
           </TouchableOpacity>
         </View>

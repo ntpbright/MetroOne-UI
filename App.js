@@ -5,6 +5,8 @@ import AppNavigator from './navigation/AppNavigator';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import BackgroundFetch from "react-native-background-fetch";
 
+import post_attendance from './Functions/api/post_m_attendance'
+
 import Colors from './constants/Colors'
 
 const timer = require('react-native-timer');
@@ -38,8 +40,8 @@ const theme = {
 };
 
 export default class App extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.BETWEEN_DEGREE = 15.00;
     this.THOUSAND_METER = 1000;
     this.SURFACE_DISTANCE_PER_ONE_DEGREE = [
@@ -78,7 +80,19 @@ export default class App extends React.Component {
     return this.getSurfaceDistance(location).longitude * this.THOUSAND_METER;
   }
 
+  callApiAttendance(){
+    post_attendance()
+    .then(result => {
+      this.setState({status : result.clock_event})
+      console.log(result)
+    })
+    .catch(error => {
+
+    })
+  }
+
   componentWillMount = async () => {
+    console.log("will mount")
     await this._getLocationAsync()
   }
 
@@ -100,15 +114,10 @@ export default class App extends React.Component {
       startOnBoot: true         // <-- Android-only
     }, () => {
       console.log("[js] Received background-fetch event");
-      timer.setInterval('UpdateGPSInterval', () => {
-        console.log("Interval"),
-        this.updateLocation(),
-        this.findDistance(),
-        this.checkStatus(),
-        console.log(this.state.real_location),
-        console.log(this.state.distance),
-        console.log(this.state.status)
-      }, 1000);
+      this.updateLocation(),
+      this.findDistance(),
+      this.checkStatus(),
+      this._getLocationAsync(),
       console.log(this.state.real_location),
       console.log(this.state.distance),
       console.log(this.state.status)

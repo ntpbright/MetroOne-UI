@@ -155,7 +155,7 @@
 				TargetAttributes = {
 					B56386401DB9693800A0598C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = C8D8QTF339;
+						DevelopmentTeam = FVKK92ZQW6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -413,7 +413,7 @@
 			baseConfigurationReference = CADB245A3A91D6204006621A /* Pods-metroone-ui.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = C8D8QTF339;
+				DEVELOPMENT_TEAM = FVKK92ZQW6;
 				INFOPLIST_FILE = "$(SRCROOT)/metroone-ui/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com-MetroOne";
@@ -427,7 +427,7 @@
 			baseConfigurationReference = 2DE412C43E797B14182B0942 /* Pods-metroone-ui.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = C8D8QTF339;
+				DEVELOPMENT_TEAM = FVKK92ZQW6;
 				INFOPLIST_FILE = "$(SRCROOT)/metroone-ui/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com-MetroOne";

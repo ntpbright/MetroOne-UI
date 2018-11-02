@@ -1,6 +1,6 @@
-const url = 'http://f3363372.ngrok.io'
+const url = 'http://67d1238c.ngrok.io'
 
 export default {
   post_attendance: url+'/api/v1/attendance',
-  get_user_status: url+'api/v1/attendances/user/:id'
+  get_user_log: url+'api/v1/attendances/user/:id'
 };

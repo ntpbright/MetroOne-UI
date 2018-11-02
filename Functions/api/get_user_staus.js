@@ -1,7 +1,7 @@
 import api from '../../constants/api'
 
-function get_user_status() {
-  var url = api.get_user_status
+function get_user_log() {
+  var url = api.get_user_log
 
   var params = {
     id: '0001',
@@ -12,7 +12,7 @@ function get_user_status() {
   }).join('&');
 
   return new Promise((resolve, reject) => {
-    fetch(api.get_user_status,searchParams, {
+    fetch(api.get_user_log,searchParams, {
       method: 'GET',
     }).then(res => res.json())
     .then(response =>
@@ -23,4 +23,4 @@ function get_user_status() {
     .catch(error => console.error('Error Get user status:', error));
   })
 }
-module.exports = get_user_status
+module.exports = get_user_log
