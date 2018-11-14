@@ -10394,7 +10394,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1920" />
     <option name="height" value="1200" />
   </component>
@@ -10415,12 +10415,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="android.project.structure.last.selected" value="Project" />
+    <property name="android.project.structure.last.selected" value="react-native-background-fetch" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="Pixel_XL_API_26" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -10696,7 +10696,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -10704,16 +10704,16 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5026624" side_tool="true" visible="true" weight="0.2568889" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.4536741" side_tool="true" visible="true" weight="0.6666667" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.493895" weight="0.32995495" />
-      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.5470086" weight="0.6666667" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49361023" weight="0.32977778" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="7" sideWeight="0.54632586" visible="true" weight="0.6666667" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21778488" />
-      <window_info active="true" anchor="bottom" id="Build" order="8" sideWeight="0.49733758" visible="true" weight="0.2568889" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.4968051" weight="0.65155554" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />

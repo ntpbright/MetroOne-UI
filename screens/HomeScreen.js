@@ -171,7 +171,7 @@ export default class HomeScreen extends React.Component {
             style={styles.clockBtn}
           >
             <Image style={styles.clockBtnImage}
-              source= {this.state.screenDetail.assetBtn[this.state.clockStatus]}
+              source={require('../assets/icons/btn_main_clock_in.png')}
             />
           </TouchableOpacity>
         </View>

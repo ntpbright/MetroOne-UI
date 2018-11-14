@@ -61,7 +61,7 @@ export default class ManualScreen extends React.Component {
               />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress= {() => this.props.navigation.navigate('Clockout')}
+              onPress= {() => this.props.navigation.navigate('Remote')}
               style={styles.btn}
             >
               <Image style={styles.btnSize}
